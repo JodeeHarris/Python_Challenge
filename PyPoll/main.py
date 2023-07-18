@@ -19,8 +19,6 @@ import csv
 
 csvpath = os.path.join ("Resources", "election_data.csv")
 
-polls = []
-
 with open(csvpath,'r') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -35,18 +33,13 @@ with open(csvpath,'r') as csvfile:
     x = 0
     
     for row in csvreader:
-         rowcount += 1
+        rowcount += 1
+        politician_vote = row[2]
          
-    for politician_vote in csvreader:
-        politician_vote = len((polls[2]))
-        
         if politician_vote == "Charles Casper Stockham":
             counterstockham = counterstockham + 1
-            
-        
         if politician_vote == "Diana DeGette":
             counterdegette = counterdegette + 1
-        
         if politician_vote == "Raymon Anthony Doane":
             counterdoane = counterdoane + 1
         
@@ -74,9 +67,9 @@ print("Total Votes: " + str(rowcount))
 
 print("-------------------------")
 
-print(f"Charles Casper Stockham: {per_stockham}% {counterstockham}")
-print(f"Diana DeGette: {per_degette}% {counterdegette}")
-print(f"Raymon Anthony Doane: {per_doane}% {counterdoane}")
+print(f"Charles Casper Stockham: {per_stockham}% ({counterstockham})")
+print(f"Diana DeGette: {per_degette}% ({counterdegette})")
+print(f"Raymon Anthony Doane: {per_doane}% ({counterdoane})")
 
 print("-------------------------")
 
@@ -90,9 +83,9 @@ with open("Analysis/Info.txt", "w") as output_folder:
     output_folder.write("-------------------------" + "\n")
     output_folder.write("Total Votes: " + str(rowcount) + "\n")
     output_folder.write("-------------------------" + "\n")
-    output_folder.write(f"Charles Casper Stockham:{per_stockham}% {counterstockham}\n")
-    output_folder.write(f"Diana DeGette: {per_degette}% {counterdegette}\n")
-    output_folder.write(f"Raymon Anthony Doane:{per_doane}% {counterdoane}\n")
+    output_folder.write(f"Charles Casper Stockham:{per_stockham}% ({counterstockham})\n")
+    output_folder.write(f"Diana DeGette: {per_degette}% ({counterdegette})\n")
+    output_folder.write(f"Raymon Anthony Doane:{per_doane}% ({counterdoane})\n")
     output_folder.write(f"-------------------------\n")
     output_folder.write(f"{x}\n")
     output_folder.write(f"-------------------------\n")
