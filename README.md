@@ -2,7 +2,7 @@
  Module 3 Homework Challenge
 
 
-A script that runs through differnt worksheets of year 2018 to 2020's data.
+A script that transforms information from a elections poll csv file and a transaction csv.
 
 ## Description
 The script runs through the rows of the two different spreadsheets to locate data that can be totaled, averaged and transformed into a percentage based on conditional if statements. The information is then placed into a text file and printed on the terminal.
