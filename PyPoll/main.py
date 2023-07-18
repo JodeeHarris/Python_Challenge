@@ -74,9 +74,9 @@ print("Total Votes: " + str(rowcount))
 
 print("-------------------------")
 
-print(f"Charles Casper Stockham:{per_stockham}% {counterstockham}")
+print(f"Charles Casper Stockham: {per_stockham}% {counterstockham}")
 print(f"Diana DeGette: {per_degette}% {counterdegette}")
-print(f"Raymon Anthony Doane:{per_doane}% {counterdoane}")
+print(f"Raymon Anthony Doane: {per_doane}% {counterdoane}")
 
 print("-------------------------")
 
