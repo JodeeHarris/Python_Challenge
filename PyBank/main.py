@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import os
 import csv
 #Values being assigned lists
@@ -18,44 +17,10 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     
     # Placing the word values with a numerical value
-=======
-""" 
-
-1. The total number of months included in the dataset
-
-2. The net total amount of "Profit/Losses" over the entire period
-
-3. The changes in "Profit/Losses" over the entire period, and then 
-the average of those changes
-
-4. The greatest increase in profits (date and amount) over the entire period
-
-5. The greatest decrease in profits (date and amount) over the entire period 
-
-6. In addition, your final script should both print the analysis to the terminal 
-and export a text file with the results.
-
-"""
-import os
-import csv
-
-l_p = []
-months = []
-
-csvpath = os.path.join("Resources", "budget_data.csv")
-
-with open(csvpath) as csvfile:
-
-    csvreader = csv.reader(csvfile, delimiter=',')
-    
-    csv_header = next(csvreader)
-    
->>>>>>> Stashed changes
     previous = 0
     rowcount = 0
     total_sum= 0
     
-<<<<<<< Updated upstream
      # Row accesses our csv list
     for row in csvreader:
         
@@ -81,25 +46,10 @@ with open(csvpath) as csvfile:
     
             
 # Printing results to the terminal    
-=======
-    for row in csvreader:
-        rowcount += 1
-        total_sum += int(row[1])
-        
-        if rowcount != 1:
-            pl = int(row[1]) - previous
-            l_p.append(pl)
-            months.append(row[0])
-            
-        previous = int(row[1])
-            
-    
->>>>>>> Stashed changes
 print("Total Transactions: " + str(rowcount))
 
 print(f"Total: ${total_sum}")
 
-<<<<<<< Updated upstream
 # Creates the average change
 avg_lp = sum(l_p) / len(l_p)
 
@@ -132,33 +82,11 @@ print(f"Greatest Decrease in Profits: {pl_month_min} (${pl_min})")
 with open("Analysis/Info.txt", "w") as output_folder:
     
     #writing in the text file
-=======
-avg_lp = sum(l_p) / len(l_p)
-
-print(f"Average Change: ${avg_lp:,.2f}")
-
-pl_max = max(l_p)
-pl_index_max = l_p.index(pl_max)
-pl_month_max = months[pl_index_max]
-
-pl_min = min(l_p)
-pl_index_min =l_p.index(pl_min)
-pl_month_min = months[pl_index_min]
-
-print(f"Greatest Increase in Profits: {pl_month_max} (${pl_max})")
-print(f"Greatest Decrease in Profits: {pl_month_min} (${pl_min})")
-
-with open("Analysis/Info.txt", "w") as output_folder:
-    
-    output_folder.write(f"Financia\n")
-    output_folder.write(f"\n")
->>>>>>> Stashed changes
     output_folder.write("Total Transactions: " + str(rowcount)+ "\n")
     output_folder.write(f"Total: ${total_sum}\n")
     output_folder.write(f"Average Change: ${avg_lp:,.2f}\n")
     output_folder.write(f"Greatest Increase in Profits: {pl_month_max} (${pl_max}) \n")
     output_folder.write(f"Greatest Decrease in Profits: {pl_month_min} (${pl_min}) \n")
-<<<<<<< Updated upstream
 """ 
 for profit in l_p[1]:
     
@@ -213,5 +141,3 @@ amount_min = []
 for temp in csvreader:
     amount_max = 
  """
-=======
->>>>>>> Stashed changes
